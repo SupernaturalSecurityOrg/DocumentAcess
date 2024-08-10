@@ -1,0 +1,8 @@
+Para que eu não se esqueça futuramente
+
+	MUDANÇAS
+
+- Abrir() precisa fazer o artigo ter display: block;
+enquanto Fechar() precisa dar o display: none;
+
+-Abrir() e fechar invez de mexer no content vão mexer na section em si.

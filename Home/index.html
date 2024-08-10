@@ -5,76 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>O.S.S.</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
-    <link rel="stylesheet" href="style/widescreen-style.css">
-    
+    <link rel="stylesheet" href="style/widescreen-Basestyle.css">
+   
 </head>
-<body>
+<body class="screen">
     <section id="login-screen">
-      <img src="img/logo.png" alt="">
-      <section id="login">
-          <h1>Login</h1>
-          <div id="form">
-                  <div class="campo">
-                      <i class="material-icons">person</i>
-                      <input type="text" name="name" id="name" placeholder="Login"required autocomplete="off">
-                  </div>
-                  <div class="campo">
-                          <i class="material-icons">vpn_key</i>
-                          <input type="password" name="id" id="id" placeholder="ID" required autocomplete="off" onkeypress(enter)="">
-                  </div>
-                  <button onclick="list()" >Entrar</button>
-               </div>
-      </section>
+  
+      <div class="login-box">
+        <h1>O.S.S.</h1>
+        <h2>Document-Acess</h2>
+        <div  class="user-box">
+            <input id="name" type="text" required autocomplete="off">
+            <span class="material-icons">person</span> <label for=""> Username</label>
+        </div>
+        <div  class="user-box">
+            <input id="id" type="password" name="" id="" required>
+            <span class="material-icons">key</span> <label for="">Agent ID</label>
+        </div>
+        <button onclick="list()">Login</button>
+        <i>Se você de alguma forma entrou aki por engano, recomendamos que saia imediatamente!</i>
+    </div>
     </section>
     
     <div class="load-screen">
-        <div class="pixel">
-          <img src="img/Characters/isaac.png" alt="" class="img">
-          <img src="img/Characters/isaac-pixel.png" alt="" class="imgPixel">
-        </div>
+        <h1 id="h1-1">O.S.S.</h1>
+        <img id="logo" src="img/logo.png" alt="Logo">
+                <h1 id="welcome">Welcome</h2>
+                <div class="pixel">
+                  <img src="img/Characters/isaac.png" alt="" class="img">
+                  <img src="img/Characters/isaac-pixel.png" alt="" class="imgPixel">
+                </div>
+                <h2 class="myuser">user__</h2>  
         
         <div class="loading">
-           <label class="text">Loading...</label>
+         
           <div class="progress-bar">
+                <p class="text">Analizando seu Historico...</p>
             <div class="progress"></div>
           </div>
-          <div class="percent">100%</div>
+          
         </div>
+        <div class="percent">100%</div>
       </div>
 
-    <section id="content">
-      <h1>Default</h1>
-        <article>
-                <div id="locked">
-                <img src="img/loker.png" alt="">
-                <h1>Senha Necessaria</h1>
-                <input type="password" name="locker" id="locker">
-                <button class="btn2" id="btn-close" onclick="fechar()">&times;</button>
-                </div>
-            <button class="btn" id="btn-close" onclick="fechar()">&times;</button>
-           <img src="" alt="" id="myimage">
-
-            <input type="checkbox" name="info" id="info"  > 
-            <label for="info" class="btn" onclick="change()" >
-                <i class="material-icons" style="font-size: 40px;">
-                    description
-                </i>
-            </label>
-            <div class="info">
-                <p></p>
-            </div>
-        </article>
-    </section>
+   
     <main>
         <header>
-              <div>
-                <h1>O.S.S.</h1>
-                <h3>Fichario de Arquivos</h3>
-            </div>
-            <div><i class="material-icons">person</i><h2 id="myuser">User__</h2></div>
-       
+              
+        <h1><strong>O.S.S.</strong>Document Acess</h1>
+        <img src="img/logo.png" alt="" class="logo">
+        <img src="img/Characters/isaac-profile.png" alt="" id="imgProfile">
+            <h2 class="myuser">Cocada Bobão</h2>
         </header>
-            
         <section class="docs">
             <div class="d01" id="s01" onclick="abrir(this.id)">
                     <img src="img/Document-icon.png" alt="">
@@ -87,8 +69,9 @@
             <div class="d02" id="s03" onclick="abrir(this.id)">
                     <img src="img/Document-icon.png" alt="">
                     <p>Legenda 03</p>
+                    
 
-            </div>
+            </div> 
             <div class="d02" id="s04" onclick="abrir(this.id)">
                     <img src="img/Document-icon.png" alt="">
                     <p>Legenda 04</p>
@@ -144,6 +127,33 @@
             <p>Legenda 16</p>
         </div>
         </section>
+        <section id="content">
+                
+                  <article id="article">
+                        <div>
+                        <h1>Default</h1>
+                        <button id="close" onclick="fechar()">close</button>
+                        </div>
+                          <div id="locked">
+                          <img src="img/loker.png" alt="">
+                          <h1>Senha Necessaria</h1>
+                          <input type="password" name="locker" id="locker">
+                          <button class="btn2" id="btn-close" onclick="fechar()">&times;</button>
+                          </div>
+                      
+                     <img src="img/content/cadeirante.jpg" alt="" id="myimage">
+          
+                      <input type="checkbox" name="info" id="info"> 
+                      <label for="info" class="btn" onclick="change()">
+                          <i class="material-icons" style="font-size: 40px;">
+                              description
+                          </i>
+                      </label>
+                      <div class="info">
+                          <p></p>
+                      </div>
+                  </article>
+              </section>
 
         <footer></footer>
 </main>

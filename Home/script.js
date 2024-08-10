@@ -1,5 +1,5 @@
 const maintag = document.querySelector('main');// A divisão entre login e conteudo
-var aba = window.document.getElementById('content');// O container do arquivo
+var aba = window.document.getElementById('article');// O container do arquivo
 var info = document.querySelector('.info');//O container da descrição
 var decider = document.getElementById('info');//Check box da descrição
 var loadScreen = document.querySelector('.load-screen');
@@ -21,6 +21,7 @@ if(decider.checked){
     aba.querySelector('#myimage').style.left = '60%';
     }
 }
+//função de destrancar files
 document.querySelector('#locker').addEventListener('keyup', (e)=> {
     if (e.key === "Enter") {
       destrancar()
@@ -29,7 +30,6 @@ document.querySelector('#locker').addEventListener('keyup', (e)=> {
 //Fecha ons Contents, lockers e reseta seu conteúdo
 function fechar(){
     aba.style.display = 'none';
-    maintag.style.opacity = '1';
     decider.checked = false;
     info.style.width = '0%';
     info.querySelector('p').style.display = 'none';
@@ -48,13 +48,10 @@ aba.querySelector('h1').innerText = document.getElementById(clicked_id).querySel
 //A mecanica de trancar arquivos
 if(document.getElementById(clicked_id).classList.contains('xxx')) {
     document.getElementById('locked').style.display = 'block';
-    aba.querySelector('article').style.backgroundColor = '#67121280';
-    aba.querySelector('article').style.border = '#b0181880 outset 5px';
+   
     
 } else { 
     document.getElementById('locked').style.display = 'none';
-    aba.querySelector('article').style.backgroundColor = '#121f6780';
-    aba.querySelector('article').style.border = '#182fb080 outset 5px';
 }
 
     switch (clicked_id) {
@@ -139,13 +136,15 @@ info.querySelector('p').innerHTML = ''
  chave =  ''          
     break; 
 }
+//Sistema de Descrição inteligente
     if(info.querySelector('p').textContent.length === 0) {  
         aba.querySelector('label').style.display = 'none';
     }else { 
         aba.querySelector('label').style.display = 'block';
     }
+//Supostamente abre o artigo
     aba.style.display = 'block';
-    maintag.style.opacity = '0.5'
+   
 }
    
     document.querySelector('#id').addEventListener('keydown', (e)=> {
@@ -164,8 +163,8 @@ info.querySelector('p').innerHTML = ''
         if (document.querySelector('#locker').value.toLowerCase() === chave) {
             
                 document.querySelector('#locked').style.display = 'none';
-                aba.querySelector('article').style.backgroundColor = '#121f6780';
-                aba.querySelector('article').style.border = '#182fb080 outset 5px';
+                aba.querySelector('article').style.backgroundColor = '#12000080';
+                aba.querySelector('article').style.border = '#12000080 solid 1px';
                 docs.classList.remove('xxx');
                 abrir()
         } else {window.alert('Acess Denied');}
@@ -194,34 +193,66 @@ function list(){
             docs[i].style.display = "block";
         }
     }
-    
+    //Lista com todos os Logins
     switch (name + " " + id) {
 case "bob 0":
+    document.querySelectorAll(".myuser").forEach(elem => elem.innerHTML = "Cocada Bobão");
     var docs = document.querySelectorAll(`.docs > div`);
     entrar();
     break;
-case "chiara d'angelo 66020140000":
-    document.getElementById("myuser").innerHTML = "Chiara D'Angelo";
+case "chiara d'angelo 6602014":
+    document.querySelectorAll(".myuser").forEach(elem => elem.innerHTML = "Chiara D'Angelo");
+    document.getElementById('imgProfile').src = 'img/Characters/chiara-profile.png';
+    document.querySelectorAll(".img").forEach(img => {
+        img.src = "img/Characters/chiara.png";
+      });
+    document.querySelectorAll(".imgPixel").forEach(img => {
+        img.src = "img/Characters/chiara-pixel.png";
+      });
     var docs = document.getElementsByClassName('d01');
     entrar();
     break;
 case "klaus saphira 31102150000":
-    document.getElementById("myuser").innerHTML = "Klaus Saphira";
+    document.querySelectorAll(".myuser").forEach(elem => elem.innerHTML = "Klaus Saphira");
+    document.querySelectorAll(".img").forEach(img => {
+        img.src = "img/Characters/chiara.png";
+      });
+    document.querySelectorAll(".imgPixel").forEach(img => {
+        img.src = "img/Characters/chiara-pixel.png";
+      });
     var docs = document.getElementsByClassName('d02');
     entrar();
     break;
 case "nimeria tallon 19170490000":
-    document.getElementById("myuser").innerHTML = "Nimeria Tallon";
+    document.querySelectorAll(".myuser").forEach(elem => elem.innerHTML = "Nimeria Tallon");
+    document.querySelectorAll(".img").forEach(img => {
+        img.src = "img/Characters/chiara.png";
+      });
+    document.querySelectorAll(".imgPixel").forEach(img => {
+        img.src = "img/Characters/chiara-pixel.png";
+      });
     var docs = document.getElementsByClassName('d03');
     entrar();
     break;
 case "mirai misuzune 00339850000":
-    document.getElementById("myuser").innerHTML = "Mirai Misuzune";
+    document.querySelectorAll(".myuser").forEach(elem => elem.innerHTML = "Mirai Misuzune");
+    document.querySelectorAll(".img").forEach(img => {
+        img.src = "img/Characters/chiara.png";
+      });
+    document.querySelectorAll(".imgPixel").forEach(img => {
+        img.src = "img/Characters/chiara-pixel.png";
+      });
     var docs = document.getElementsByClassName('d05');
     entrar();
     break;
-case "isaac kollins 70120220000":
-    document.getElementById("myuser").innerHTML = "Isaac Kollins";
+case "Lenus S 70120220000":
+    document.querySelectorAll(".myuser").forEach(elem => elem.innerHTML = "Lenus");
+    document.querySelectorAll(".img").forEach(img => {
+        img.src = "img/Characters/chiara.png";
+      });
+    document.querySelectorAll(".imgPixel").forEach(img => {
+        img.src = "img/Characters/chiara-pixel.png";
+      });
     var docs = document.getElementsByClassName('d06');
     entrar();
     break;
@@ -229,7 +260,7 @@ default:
     window.alert('Acess Denied');
 }
 }
-
+    //Load-Screen função
 function progress(){
     
     var percent = document.querySelector('.percent');
@@ -243,6 +274,7 @@ function progress(){
       "Analizando seu Historico...",
       "Fazendo um Sandwish...",
       "Nenhum lugar para esconder.",
+      "Loading...",
     ];
     var randomNumber = Math.floor(Math.random() * textArray.length);
     document.querySelector(".text").innerHTML = textArray[randomNumber];
